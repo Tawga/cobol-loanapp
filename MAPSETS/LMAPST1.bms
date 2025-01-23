@@ -1,0 +1,86 @@
+*       MAPSET DEFINITION
+        PRINT NOGEN
+LMAPST1 DFHMSD TYPE=&SYSPARM,                                          X
+               MODE=INOUT,                                             X
+               CTRL=FREEKB,                                            X
+               LANG=COBOL,                                             X
+               TIOAPFX=YES,                                            X
+               STORAGE=AUTO,                                           X
+               TERM=3270,                                              X
+               MAPATTS=(COLOR,HILIGHT),                                X
+               DSATTS=(COLOR,HILIGHT)
+
+*       MAP DEFINITION
+LMENU   DFHMDI SIZE=(24,80),                                           X
+               LINE=1,                                                 X
+               COLUMN=1,                                               X
+               JUSTIFY=LEFT
+        DFHMDF POS=(2,15),LENGTH=24,ATTRB=PROT,COLOR=YELLOW,           X
+               INITIAL=' ____  _____ ____ _____ '
+
+        DFHMDF POS=(2,40),LENGTH=25,ATTRB=PROT,COLOR=YELLOW,           X
+               INITIAL=' ____    _    _   _ _  __'
+
+        DFHMDF POS=(3,15),LENGTH=24,ATTRB=PROT,COLOR=YELLOW,           X
+               INITIAL='| __ )| ____/ ___|_   _|'
+
+        DFHMDF POS=(3,40),LENGTH=25,ATTRB=PROT,COLOR=YELLOW,           X
+               INITIAL='| __ )  / \  | \ | | |/ /'
+
+        DFHMDF POS=(4,15),LENGTH=24,ATTRB=PROT,COLOR=YELLOW,           X
+               INITIAL='|  _ \|  _| \___ \ | |  '
+
+        DFHMDF POS=(4,40),LENGTH=25,ATTRB=PROT,COLOR=YELLOW,           X
+               INITIAL='|  _ \ / _ \ |  \| | ´ / '
+
+        DFHMDF POS=(5,15),LENGTH=24,ATTRB=PROT,COLOR=YELLOW,           X
+               INITIAL='| |_) | |___ ___) || |  '
+
+        DFHMDF POS=(5,40),LENGTH=24,ATTRB=PROT,COLOR=YELLOW,           X
+               INITIAL='| |_) / ___ \| |\  | . \ '
+
+        DFHMDF POS=(6,15),LENGTH=24,ATTRB=PROT,COLOR=YELLOW,           X
+               INITIAL='|____/|_____|____/ |_|  '
+
+        DFHMDF POS=(6,40),LENGTH=25,ATTRB=PROT,COLOR=YELLOW,           X
+               INITIAL='|____/_/   \_\_| \_|_|\_\'
+
+        DFHMDF POS=(10,30),LENGTH=20,ATTRB=PROT,COLOR=RED,             X
+               INITIAL='WE MAKE YOU BANKRUPT'
+
+        DFHMDF POS=(13,20),LENGTH=42,ATTRB=PROT,COLOR=YELLOW,          X
+               INITIAL='               _ _.-´`-._ _               '
+
+        DFHMDF POS=(14,20),LENGTH=42,ATTRB=PROT,COLOR=YELLOW,          X
+               INITIAL='              ;.''________''.;            '
+
+        DFHMDF POS=(15,20),LENGTH=42,ATTRB=PROT,COLOR=YELLOW,          X
+               INITIAL='   _________N.[____________].N_________   '
+
+        DFHMDF POS=(16,20),LENGTH=42,ATTRB=PROT,COLOR=YELLOW,          X
+               INITIAL='  [""_""_""_""||==||==||==||""_""_""_""]  '
+
+        DFHMDF POS=(17,20),LENGTH=42,ATTRB=PROT,COLOR=YELLOW,          X
+               INITIAL='  |"""""""""""||..||..||..||"""""""""""|  '
+
+        DFHMDF POS=(18,20),LENGTH=42,ATTRB=PROT,COLOR=YELLOW,          X
+               INITIAL='  |LI LI LI LI||LI||LI||LI||LI LI LI LI|  '
+
+        DFHMDF POS=(19,20),LENGTH=42,ATTRB=PROT,COLOR=YELLOW,          X
+               INITIAL='  |.. .. .. ..||..||..||..||.. .. .. ..|  '
+
+        DFHMDF POS=(20,20),LENGTH=42,ATTRB=PROT,COLOR=YELLOW,          X
+               INITIAL='  |LI LI LI LI||LI||LI||LI||LI LI LI LI|  '
+
+        DFHMDF POS=(21,20),LENGTH=42,ATTRB=PROT,COLOR=YELLOW,          X
+               INITIAL=',;;,;;;,;;;,;;;,;;;,;;;,;;;,;;,;;;,;;;,;;,'
+
+MESSAGE DFHMDF POS=(23,1),LENGTH=40,ATTRB=PROT,COLOR=YELLOW,           X
+               INITIAL=''
+
+        DFHMDF POS=(24,3),LENGTH=40,ATTRB=PROT,COLOR=BLUE,             X
+               INITIAL='F3=EXIT   F4=NEW APPLICATION   F5=SEARCH'
+
+        DFHMSD TYPE=FINAL
+        END
+

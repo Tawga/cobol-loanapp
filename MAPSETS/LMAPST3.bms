@@ -1,0 +1,108 @@
+******* MAPSET DEFINITION *******************
+        PRINT NOGEN
+LMAPST1 DFHMSD TYPE=&SYSPARM,                                          X
+               MODE=INOUT,                                             X
+               CTRL=FREEKB,                                            X
+               LANG=COBOL,                                             X
+               TIOAPFX=YES,                                            X
+               STORAGE=AUTO,                                           X
+               TERM=3270,                                              X
+               MAPATTS=(COLOR,HILIGHT),                                X
+               DSATTS=(COLOR,HILIGHT)
+
+******* MAP DEFINITION **********************
+LSEARCH DFHMDI SIZE=(24,80),                                           X
+               LINE=1,                                                 X
+               COLUMN=1,                                               X
+               JUSTIFY=LEFT
+
+******* FIELD DEFINITIONS - HEADER **********
+        DFHMDF POS=(2,2),LENGTH=6,ATTRB=PROT,COLOR=RED,                X
+               INITIAL='SEARCH'
+
+******* SOCIAL SECURITY NUMBER **************
+        DFHMDF POS=(4,2),LENGTH=29,ATTRB=PROT,                         X
+               INITIAL='ENTER SOCIAL SECURITY NUMBER:'
+
+SSN     DFHMDF POS=(4,32),LENGTH=11,ATTRB=(UNPROT,IC,NORM,FSET),       X
+               INITIAL='___________',HILIGHT=UNDERLINE
+
+        DFHMDF POS=(4,44),LENGTH=1,ATTRB=PROT
+
+******* APPLICATION ID **********************
+        DFHMDF POS=(7,2),LENGTH=15,ATTRB=PROT,                         X
+               INITIAL='APPLICATION ID:'
+
+APPID   DFHMDF POS=(7,20),LENGTH=8,ATTRB=UNPROT
+
+******* APPLICANT ***************************
+        DFHMDF POS=(8,2),LENGTH=10,ATTRB=PROT,                         X
+               INITIAL='APPLICANT:'
+
+APPLCNT DFHMDF POS=(8,20),LENGTH=30,ATTRB=UNPROT
+
+******* STATUS ******************************
+        DFHMDF POS=(9,2),LENGTH=7,ATTRB=PROT,                          X
+               INITIAL='STATUS:'
+
+STATUS  DFHMDF POS=(9,20),LENGTH=8,ATTRB=UNPROT
+
+        DFHMDF POS=(9,29),LENGTH=1,ATTRB=ASKIP
+
+******* LOAN AMOUNT *************************
+        DFHMDF POS=(11,2),LENGTH=12,ATTRB=PROT,                        X
+               INITIAL='LOAN AMOUNT:'
+
+AMOUNT  DFHMDF POS=(11,23),LENGTH=8,ATTRB=UNPROT
+
+        DFHMDF POS=(11,32),LENGTH=3,ATTRB=PROT,                        X
+               INITIAL='EUR'
+
+******* LOAN PERIOD *************************
+        DFHMDF POS=(12,2),LENGTH=12,ATTRB=PROT,                        X
+               INITIAL='LOAN PERIOD:'
+
+PERIOD  DFHMDF POS=(12,29),LENGTH=2,ATTRB=UNPROT
+
+        DFHMDF POS=(12,32),LENGTH=6,ATTRB=PROT,                        X
+               INITIAL='MONTHS'
+
+******* INTEREST ****************************
+        DFHMDF POS=(13,2),LENGTH=9,ATTRB=PROT,                         X
+               INITIAL='INTEREST:'
+
+INTRST  DFHMDF POS=(13,30),LENGTH=1,ATTRB=UNPROT,PICOUT='9'
+
+        DFHMDF POS=(13,32),LENGTH=1,ATTRB=PROT,                        X
+               INITIAL='%'
+
+******* MONTHLY PAYMENT *********************
+        DFHMDF POS=(14,2),LENGTH=16,ATTRB=PROT,                        X
+               INITIAL='MONTHLY PAYMENT:'
+
+MNTHLY  DFHMDF POS=(14,20),LENGTH=11,ATTRB=UNPROT,PICOUT='ZZZZZZZZ.99'
+
+        DFHMDF POS=(14,32),LENGTH=3,ATTRB=PROT,                        X
+               INITIAL='EUR'
+
+******* TOTAL LOAN **************************
+        DFHMDF POS=(15,2),LENGTH=11,ATTRB=PROT,                        X
+               INITIAL='TOTAL LOAN:'
+
+TOTAL   DFHMDF POS=(15,20),LENGTH=11,ATTRB=UNPROT,PICOUT='ZZZZZZZZ.99'
+
+        DFHMDF POS=(15,32),LENGTH=3,ATTRB=PROT,                        X
+               INITIAL='EUR'
+
+******* OPTIONS *****************************
+        DFHMDF POS=(24,3),LENGTH=29,ATTRB=PROT,COLOR=BLUE,             X
+               INITIAL='F3=EXIT   F4=DELETE   F5=EDIT'
+
+******* ERROR-MESSAGE ***********************
+MESSAGE DFHMDF POS=(23,1),LENGTH=40,ATTRB=PROT,COLOR=YELLOW,           X
+               INITIAL=''
+
+******* END *********************************
+        DFHMSD TYPE=FINAL
+        END
+

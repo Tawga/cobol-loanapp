@@ -1,0 +1,153 @@
+*       MAPSET DEFINITION
+        PRINT NOGEN
+LMAPST2 DFHMSD TYPE=&SYSPARM,                                          X
+               MODE=INOUT,                                             X
+               CTRL=FREEKB,                                            X
+               LANG=COBOL,                                             X
+               TIOAPFX=YES,                                            X
+               STORAGE=AUTO,                                           X
+               TERM=3270,                                              X
+               MAPATTS=(COLOR,HILIGHT),                                X
+               DSATTS=(COLOR,HILIGHT)
+
+*       MAP DEFINITION
+LFORM   DFHMDI SIZE=(24,80),                                           X
+               LINE=1,                                                 X
+               COLUMN=1,                                               X
+               JUSTIFY=LEFT
+
+*       FIELD DEFINITIONS
+        DFHMDF POS=(2,20),LENGTH=20,ATTRB=(PROT,BRT),COLOR=BLUE,       X
+               INITIAL='NEW LOAN APPLICATION'
+
+        DFHMDF POS=(4,2),LENGTH=21,ATTRB=PROT,COLOR=BLUE,              X
+               INITIAL='SOCIAL SECURITY NUM:*'
+
+SSN     DFHMDF POS=(4,31),LENGTH=6,ATTRB=(UNPROT,NORM,IC,NUM,FSET),    X
+               HILIGHT=UNDERLINE,INITIAL='      ',PICIN='9(06)'
+
+SVNTH   DFHMDF POS=(4,38),LENGTH=1,ATTRB=(UNPROT,NORM,FSET),           X
+               HILIGHT=UNDERLINE,INITIAL=' '
+
+REST    DFHMDF POS=(4,40),LENGTH=4,ATTRB=(UNPROT,NORM,FSET),           X
+               HILIGHT=UNDERLINE,INITIAL='    '
+
+        DFHMDF POS=(4,45),LENGTH=1,ATTRB=ASKIP,INITIAL=' '
+
+        DFHMDF POS=(5,2),LENGTH=12,ATTRB=PROT,COLOR=BLUE,              X
+               INITIAL='FIRST NAME:*'
+
+FNAME   DFHMDF POS=(5,31),LENGTH=15,ATTRB=(UNPROT,NORM,FSET),          X
+               INITIAL='               ',HILIGHT=UNDERLINE
+
+        DFHMDF POS=(5,47),LENGTH=1,ATTRB=ASKIP,INITIAL=' '
+
+        DFHMDF POS=(6,2),LENGTH=11,ATTRB=PROT,COLOR=BLUE,              X
+               INITIAL='LAST NAME:*'
+
+LNAME   DFHMDF POS=(6,31),LENGTH=15,ATTRB=(UNPROT,NORM,FSET),          X
+               INITIAL='               ',HILIGHT=UNDERLINE
+
+        DFHMDF POS=(6,47),LENGTH=1,ATTRB=ASKIP,INITIAL=' '
+
+        DFHMDF POS=(7,2),LENGTH=9,ATTRB=PROT,COLOR=BLUE,               X
+               INITIAL='ADDRESS:'
+
+ADDRESS DFHMDF POS=(7,31),LENGTH=20,ATTRB=(UNPROT,NORM,FSET),          X
+               INITIAL='                    ',HILIGHT=UNDERLINE
+
+        DFHMDF POS=(7,52),LENGTH=1,ATTRB=ASKIP,INITIAL=' '
+
+        DFHMDF POS=(8,2),LENGTH=13,ATTRB=PROT,COLOR=BLUE,              X
+               INITIAL='POSTAL CODE:'
+
+POSTCD  DFHMDF POS=(8,31),LENGTH=5,ATTRB=(UNPROT,NORM,NUM,FSET),       X
+               INITIAL='     ',HILIGHT=UNDERLINE
+
+        DFHMDF POS=(8,37),LENGTH=1,ATTRB=ASKIP,INITIAL=' '
+
+        DFHMDF POS=(9,2),LENGTH=6,ATTRB=PROT,COLOR=BLUE,               X
+               INITIAL='CITY:'
+
+CITY    DFHMDF POS=(9,31),LENGTH=20,ATTRB=(UNPROT,NORM,FSET),          X
+               INITIAL='                    ',HILIGHT=UNDERLINE
+
+        DFHMDF POS=(9,52),LENGTH=1,ATTRB=ASKIP,INITIAL=' '
+
+        DFHMDF POS=(12,2),LENGTH=18,ATTRB=PROT,COLOR=BLUE,             X
+               INITIAL='EMPLOYMENT STATUS:'
+
+EMPSTS  DFHMDF POS=(12,31),LENGTH=5,ATTRB=(UNPROT,NORM,FSET),          X
+               INITIAL='     ',HILIGHT=UNDERLINE
+
+        DFHMDF POS=(12,37),LENGTH=1,ATTRB=ASKIP,INITIAL=' '
+
+        DFHMDF POS=(13,2),LENGTH=21,ATTRB=PROT,COLOR=BLUE,             X
+               INITIAL='MONTHLY GROSS INCOME:'
+
+MOGI    DFHMDF POS=(13,31),LENGTH=8,ATTRB=(UNPROT,NORM,NUM,FSET),      X
+               INITIAL='        ',HILIGHT=UNDERLINE
+
+        DFHMDF POS=(13,40),LENGTH=1,ATTRB=ASKIP,INITIAL=' '            X
+
+        DFHMDF POS=(13,42),LENGTH=1,ATTRB=PROT,INITIAL='E'
+
+        DFHMDF POS=(15,2),LENGTH=14,ATTRB=PROT,COLOR=BLUE,             X
+               INITIAL='CURRENT LOANS:'
+
+CLOANS  DFHMDF POS=(15,31),LENGTH=8,ATTRB=(UNPROT,NORM,NUM,FSET),      X
+               INITIAL='        ',HILIGHT=UNDERLINE
+
+        DFHMDF POS=(15,40),LENGTH=1,ATTRB=ASKIP,INITIAL=' '
+
+        DFHMDF POS=(15,42),LENGTH=1,ATTRB=PROT,INITIAL='E'
+
+        DFHMDF POS=(16,2),LENGTH=15,ATTRB=PROT,COLOR=BLUE,             X
+               INITIAL='CURRENT ASSETS:'
+
+CASSTS  DFHMDF POS=(16,31),LENGTH=8,ATTRB=(UNPROT,NORM,NUM,FSET),      X
+               INITIAL='        ',HILIGHT=UNDERLINE
+
+        DFHMDF POS=(16,40),LENGTH=1,ATTRB=ASKIP,INITIAL=' '
+
+        DFHMDF POS=(16,42),LENGTH=1,ATTRB=PROT,INITIAL='E'
+
+        DFHMDF POS=(18,2),LENGTH=13,ATTRB=PROT,COLOR=BLUE,             X
+               INITIAL='LOAN AMOUNT:*'
+
+LAMNT   DFHMDF POS=(18,31),LENGTH=8,ATTRB=(UNPROT,NORM,NUM,FSET),      X
+               HILIGHT=UNDERLINE,PICOUT='ZZZZZZZ9'
+
+        DFHMDF POS=(18,40),LENGTH=1,ATTRB=ASKIP,INITIAL=' '
+
+        DFHMDF POS=(18,42),LENGTH=1,ATTRB=PROT,INITIAL='E'
+
+        DFHMDF POS=(19,2),LENGTH=13,ATTRB=PROT,COLOR=BLUE,             X
+               INITIAL='LOAN PERIOD:*'
+
+LPRD    DFHMDF POS=(19,31),LENGTH=2,ATTRB=(UNPROT,NORM,NUM,FSET),      X
+               HILIGHT=UNDERLINE,PICOUT='Z9'
+
+        DFHMDF POS=(19,34),LENGTH=1,ATTRB=(PROT,ASKIP),INITIAL=' '
+
+        DFHMDF POS=(19,42),LENGTH=6,ATTRB=PROT,                        X
+               INITIAL='MONTHS'
+
+        DFHMDF POS=(20,2),LENGTH=6,ATTRB=PROT,COLOR=BLUE,              X
+               INITIAL='USAGE:'
+
+USAGE   DFHMDF POS=(20,31),LENGTH=40,ATTRB=(UNPROT,NORM,FSET),         X
+               INITIAL='                                        ',     X
+               HILIGHT=UNDERLINE
+
+        DFHMDF POS=(20,72),LENGTH=1,ATTRB=PROT,INITIAL=' '
+
+MSG     DFHMDF POS=(23,1),LENGTH=40,ATTRB=PROT,COLOR=YELLOW,           X
+               INITIAL=' '
+
+        DFHMDF POS=(24,3),LENGTH=30,ATTRB=PROT,COLOR=BLUE,             X
+               INITIAL='F3=EXIT   F4=SUBMIT   F5=CLEAR'
+
+        DFHMSD TYPE=FINAL
+        END
+

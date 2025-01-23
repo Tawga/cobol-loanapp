@@ -1,0 +1,18 @@
+**** CEDA CMDS ****                                                     00010000
+CEDA DEF MAPSET(LMAPST1) G(LOANAPP)             <- DEFINE MAPSET        00020001
+CEDA INS MAPSET(LMAPST1) G(LOANAPP)             <- INSTALL MAPSET       00030001
+                                                                        00031000
+CEDA DEF PROG(LOANMENU) G(LOANAPP) LANG(COBOL)  <- DEFINE PROGRAM       00032003
+CEDA INS PROG(LOANMENU) G(LOANAPP)              <- INSTALL PROGRAM      00033004
+CEDA DEL PROG(XXXXXXXX) G(XXXXXXXX)             <- DELETE PROGRAM       00033100
+                                                                        00034000
+CEDA DEF TRANS(XXXX) G(XXXXXXXX) PROG(XXXXXXX)  <- DEFINE TRANSACTION   00035000
+CEDA INS TRANS(XXXX) G(XXXXXXXX)                <- INSTALL TRANSACTION  00036000
+                                                                        00037000
+CEDA DI G(XXXXXXXX)                             <- DISPLAY GROUP        00038000
+                                                                        00040000
+**** CECI CMDS ****                                                     00041000
+CECI SEND MAP(LMENU) MAPSET(LMAPST1)     <- MANUALLY SEND MAP IN CICS   00050002
+                                                                        00060000
+                                                                        00070000
+
